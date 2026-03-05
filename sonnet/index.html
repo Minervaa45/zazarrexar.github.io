@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Захар Медяник — Системный аналитик</title>
+  <meta name="description" content="Системный аналитик с 4+ годами опыта. REST API, RabbitMQ, Kafka, Docker, PostgreSQL, CI/CD. Томск. Открыт к предложениям." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Захар Медяник — Системный аналитик" />
+  <meta property="og:description" content="Системный аналитик с 4+ годами опыта в проектировании интеграций и архитектур" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%237C6BFF'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,sans-serif' font-weight='700' font-size='22' fill='white'>ЗМ</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ НАВИГАЦИЯ ░░ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#hero" class="navbar__logo">ЗМ</a>
+      <nav class="navbar__links">
+        <a href="#about">О себе</a>
+        <a href="#skills">Навыки</a>
+        <a href="#experience">Опыт</a>
+        <a href="#education">Образование</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+        <!-- Moon (dark mode icon) -->
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 0010 9.79z"/>
+        </svg>
+        <!-- Sun (light mode icon) -->
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <button class="navbar__burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-menu__link">О себе</a>
+    <a href="#skills" class="mobile-menu__link">Навыки</a>
+    <a href="#experience" class="mobile-menu__link">Опыт</a>
+    <a href="#education" class="mobile-menu__link">Образование</a>
+    <a href="#contacts" class="mobile-menu__link">Контакты</a>
+  </div>
+
+  <main>
+
+    <!-- ░░ HERO ░░ -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content fade-up">
+          <p class="hero__location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Томск, Россия
+          </p>
+          <h1 class="hero__name">Захар Медяник</h1>
+          <p class="hero__role">Системный аналитик</p>
+          <p class="hero__tagline" id="tagline"></p>
+          <div class="hero__actions">
+            <button onclick="window.print()" class="btn btn--primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Скачать PDF
+            </button>
+            <a href="https://t.me/zazarrexar" target="_blank" rel="noopener" class="btn btn--outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              Написать в Telegram
+            </a>
+          </div>
+          <div class="hero__contacts">
+            <a href="mailto:zaxarrexar45@gmail.com" class="hero__contact-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              zaxarrexar45@gmail.com
+            </a>
+            <a href="tel:+79234124127" class="hero__contact-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 11.9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.63a16 16 0 006.29 6.29l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +7 923 412 41 27
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__avatar fade-up" style="animation-delay:.15s">
+          <img class="avatar-img" src="photo_2024-04-04_20-18-09.jpg" alt="Захар Медяник" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ О СЕБЕ ░░ -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__title fade-up">О себе</h2>
+        <p class="about__text fade-up">
+          Системный аналитик с <strong>4+ годами опыта</strong> в проектировании интеграций (REST API, RabbitMQ, Kafka), разработке технической документации и архитектурном анализе. Запускал продукты с нуля: последний MVP вышел на production <strong>за 6 месяцев</strong> — от сбора требований до настройки CI/CD и управления командой разработки. Умею переводить бизнес-задачи в чёткие технические решения и объяснять их как разработчикам, так и стейкхолдерам.
+        </p>
+        <div class="stats">
+          <div class="stat-card fade-up">
+            <span class="stat-card__value">4+</span>
+            <span class="stat-card__label">лет опыта</span>
+          </div>
+          <div class="stat-card fade-up" style="animation-delay:.1s">
+            <span class="stat-card__value">6 мес</span>
+            <span class="stat-card__label">MVP до production</span>
+          </div>
+          <div class="stat-card fade-up" style="animation-delay:.2s">
+            <span class="stat-card__value">3</span>
+            <span class="stat-card__label">разработчика в команде</span>
+          </div>
+          <div class="stat-card fade-up" style="animation-delay:.3s">
+            <span class="stat-card__value">MQ+Kafka</span>
+            <span class="stat-card__label">в production</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ НАВЫКИ ░░ -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <h2 class="section__title fade-up">Навыки</h2>
+        <div class="skills-grid">
+
+          <div class="skill-group fade-up">
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon">📐</span> Системный анализ
+            </h3>
+            <div class="skill-tags">
+              <span class="tag">UML</span>
+              <span class="tag">BPMN</span>
+              <span class="tag">REST API</span>
+              <span class="tag">SOAP</span>
+              <span class="tag">Swagger</span>
+              <span class="tag">User Story</span>
+              <span class="tag">Use Case</span>
+              <span class="tag">Техническое задание</span>
+            </div>
+          </div>
+
+          <div class="skill-group fade-up" style="animation-delay:.1s">
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon">🗄️</span> Базы данных
+            </h3>
+            <div class="skill-tags">
+              <span class="tag">SQL</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group fade-up" style="animation-delay:.15s">
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon">🔗</span> Интеграции
+            </h3>
+            <div class="skill-tags">
+              <span class="tag">RabbitMQ</span>
+              <span class="tag">Apache Kafka</span>
+              <span class="tag">WebSocket</span>
+            </div>
+          </div>
+
+          <div class="skill-group fade-up" style="animation-delay:.2s">
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon">⚙️</span> DevOps
+            </h3>
+            <div class="skill-tags">
+              <span class="tag">Docker</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Dokploy</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+            </div>
+          </div>
+
+          <div class="skill-group fade-up" style="animation-delay:.25s">
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon">💻</span> Языки и фреймворки
+            </h3>
+            <div class="skill-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">Linux</span>
+            </div>
+          </div>
+
+          <div class="skill-group fade-up" style="animation-delay:.3s">
+            <h3 class="skill-group__title">
+              <span class="skill-group__icon">🛠️</span> Инструменты
+            </h3>
+            <div class="skill-tags">
+              <span class="tag">Git</span>
+              <span class="tag">YouGile</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ ОПЫТ РАБОТЫ ░░ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section__title fade-up">Опыт работы</h2>
+        <div class="timeline">
+
+          <!-- Job 1 -->
+          <div class="timeline__item fade-up">
+            <div class="timeline__dot"></div>
+            <div class="exp-card">
+              <div class="exp-card__header">
+                <div>
+                  <h3 class="exp-card__role">Системный аналитик / Менеджер проекта</h3>
+                  <p class="exp-card__company">Время Цифровых Решений</p>
+                </div>
+                <span class="exp-card__period">07.2025 — 02.2026 · 8 мес</span>
+              </div>
+              <p class="exp-card__context">SaaS-сервис с чат-виджетами и аналитикой для операторов поддержки.</p>
+              <div class="exp-card__stack">
+                <span class="tag tag--sm">SQL</span>
+                <span class="tag tag--sm">PostgreSQL</span>
+                <span class="tag tag--sm">CI/CD</span>
+                <span class="tag tag--sm">REST</span>
+                <span class="tag tag--sm">DevOps</span>
+                <span class="tag tag--sm">WebSocket</span>
+                <span class="tag tag--sm">Docker</span>
+                <span class="tag tag--sm">QA</span>
+              </div>
+              <ul class="exp-card__tasks">
+                <li>Сбор требований и проектирование архитектуры MVP с нуля</li>
+                <li>Проектирование интеграций через REST API и WebSocket</li>
+                <li>Разработка подхода к интеграциям через RabbitMQ и Apache Kafka</li>
+                <li>Проектирование структур данных и SQL-запросов для аналитики в PostgreSQL</li>
+                <li>Формирование и управление командой из 3 разработчиков</li>
+              </ul>
+              <div class="exp-card__results">
+                <p class="exp-card__results-title">🎯 Результаты</p>
+                <ul>
+                  <li><strong>Организовал разработку и запуск MVP с нуля за 6 месяцев</strong></li>
+                  <li>Спроектировал и описал интеграции сервиса с внешними системами через <strong>REST API и WebSocket</strong> — форматы запросов/ответов, обработка ошибок, безопасность</li>
+                  <li>Разработал подход к интеграциям через брокеры сообщений: <strong>RabbitMQ</strong> — для асинхронных задач и очередей между сервисами, <strong>Apache Kafka</strong> — для потоковой передачи событий и аналитики, обеспечив надёжную доставку и масштабируемость</li>
+                  <li>Спроектировал структуры данных и <strong>SQL-запросы для аналитических отчётов в PostgreSQL</strong> — метрики по чатам, конверсия по виджетам, загрузка операторов</li>
+                  <li><strong>Сформировал и управлял командой из 3 разработчиков</strong> для реализации проекта</li>
+                  <li><strong>Внедрил CI/CD-пайплайны</strong> (Dokploy + GitHub Actions) — автоматизировал процесс деплоя, сократил время выкатки обновлений</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="timeline__item fade-up" style="animation-delay:.1s">
+            <div class="timeline__dot"></div>
+            <div class="exp-card">
+              <div class="exp-card__header">
+                <div>
+                  <h3 class="exp-card__role">Системный аналитик</h3>
+                  <p class="exp-card__company">PyCode</p>
+                </div>
+                <span class="exp-card__period">07.2024 — 07.2025 · 1 год</span>
+              </div>
+              <p class="exp-card__context">CRM-система для образовательной платформы CRM School и платформа для email-рассылок.</p>
+              <div class="exp-card__stack">
+                <span class="tag tag--sm">SQL</span>
+                <span class="tag tag--sm">Swagger</span>
+                <span class="tag tag--sm">PostgreSQL</span>
+                <span class="tag tag--sm">CI/CD</span>
+                <span class="tag tag--sm">REST</span>
+                <span class="tag tag--sm">Docker</span>
+              </div>
+              <ul class="exp-card__tasks">
+                <li>Сбор требований и разработка технического задания</li>
+                <li>Проектирование архитектуры CRM-системы: BPMN и UML-диаграммы</li>
+                <li>Полный пакет технической документации: API-контракты, модели данных</li>
+                <li>Проектирование асинхронного взаимодействия через RabbitMQ</li>
+                <li>Планирование спринтов, User Story и Use Case</li>
+                <li>Контейнеризация через Docker, ручное тестирование</li>
+              </ul>
+              <div class="exp-card__results">
+                <p class="exp-card__results-title">🎯 Результаты</p>
+                <ul>
+                  <li>Спроектировал <strong>архитектуру CRM-системы для образовательной платформы CRM School</strong> — модульная структура, бизнес-процессы в нотации <strong>BPMN и UML</strong></li>
+                  <li>Разработал <strong>полный пакет технической документации</strong> — требования, API-контракты (Swagger), модели данных</li>
+                  <li>Спроектировал <strong>асинхронное взаимодействие между сервисами через RabbitMQ</strong> — очереди, форматы сообщений, сценарии обработки ошибок, надёжная доставка событий</li>
+                  <li>Спроектировал <strong>схему БД PostgreSQL</strong> — таблицы, связи, индексы; SQL-запросы для ключевых отчётов CRM: воронка учеников, активность, конверсия</li>
+                  <li><strong>Внедрил CI/CD-пайплайн</strong> (GitHub Actions + Docker) — деплой с ручного процесса сокращён до <strong>автоматической доставки за минуты</strong></li>
+                  <li><strong>Исключил расхождения между dev- и prod-окружениями</strong> через контейнеризацию Docker</li>
+                  <li><strong>Участвовал в привлечении инвестиций</strong> — подготовка заявок на гранты, участие в питч-сессиях с инвесторами</li>
+                  <li>Разработал <strong>платформу для email-рассылок</strong> по целевой аудитории</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="timeline__item fade-up" style="animation-delay:.2s">
+            <div class="timeline__dot"></div>
+            <div class="exp-card">
+              <div class="exp-card__header">
+                <div>
+                  <h3 class="exp-card__role">DevOps Engineer</h3>
+                  <p class="exp-card__company">Проект «Планирование карьеры»</p>
+                </div>
+                <span class="exp-card__period">02.2024 — 07.2024 · 6 мес</span>
+              </div>
+              <p class="exp-card__context">Настройка серверной инфраструктуры корпоративного проекта с нуля.</p>
+              <div class="exp-card__stack">
+                <span class="tag tag--sm">Docker</span>
+                <span class="tag tag--sm">DevOps</span>
+                <span class="tag tag--sm">CI/CD</span>
+                <span class="tag tag--sm">Prometheus</span>
+                <span class="tag tag--sm">Grafana</span>
+              </div>
+              <ul class="exp-card__tasks">
+                <li>Контейнеризация микросервисов, настройка образов и сетевого взаимодействия</li>
+                <li>CI/CD-пайплайны (GitHub Actions): сборка, тестирование, деплой</li>
+                <li>Мониторинг и логирование через Prometheus и Grafana</li>
+                <li>Функциональное тестирование, документирование дефектов</li>
+              </ul>
+              <div class="exp-card__results">
+                <p class="exp-card__results-title">🎯 Результаты</p>
+                <ul>
+                  <li><strong>Развернул и оптимизировал серверную инфраструктуру</strong> нового корпоративного проекта — стабильность и ускорение CI/CD-процессов</li>
+                  <li><strong>Сократил время развёртывания обновлений с нескольких часов до минут</strong> за счёт автоматизации сборки и доставки</li>
+                  <li>Реализовал <strong>контейнеризацию микросервисов через Docker</strong> — образы, сетевое взаимодействие между сервисами</li>
+                  <li>Настроил <strong>CI/CD-пайплайны (GitHub Actions)</strong> — автоматическая сборка, тестирование и развёртывание на сервер</li>
+                  <li>Настроил <strong>мониторинг и логирование контейнеров через Prometheus и Grafana</strong></li>
+                  <li>Повысил <strong>отказоустойчивость и управляемость окружений</strong> с помощью контейнеризации и централизованных конфигураций</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Job 4 -->
+          <div class="timeline__item fade-up" style="animation-delay:.3s">
+            <div class="timeline__dot"></div>
+            <div class="exp-card">
+              <div class="exp-card__header">
+                <div>
+                  <h3 class="exp-card__role">Преподаватель программирования</h3>
+                  <p class="exp-card__company">Частная практика</p>
+                </div>
+                <span class="exp-card__period">01.2022 — 02.2024 · 2 года</span>
+              </div>
+              <ul class="exp-card__tasks">
+                <li>Групповые и индивидуальные занятия по Python: от базовых концепций до веб-сайтов и Telegram-ботов</li>
+                <li>Обучение Scratch для начинающих</li>
+                <li>Разработка учебных материалов и заданий</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ ОБРАЗОВАНИЕ ░░ -->
+    <section class="section section--alt" id="education">
+      <div class="container">
+        <h2 class="section__title fade-up">Образование</h2>
+        <p class="edu__university fade-up">🎓 Томский государственный университет систем управления и радиоэлектроники (ТУСУР)</p>
+        <div class="edu-grid">
+
+          <div class="edu-card fade-up">
+            <span class="edu-card__degree">Магистр</span>
+            <h3 class="edu-card__program">Предпринимательство и организация бизнеса в сфере ИТ</h3>
+            <span class="edu-card__period">2020 — 2026</span>
+          </div>
+
+          <div class="edu-card fade-up" style="animation-delay:.1s">
+            <span class="edu-card__degree">Бакалавр</span>
+            <h3 class="edu-card__program">Бизнес-информатика</h3>
+            <span class="edu-card__period">2020 — 2024</span>
+          </div>
+
+          <div class="edu-card fade-up" style="animation-delay:.2s">
+            <span class="edu-card__degree">Бакалавр</span>
+            <h3 class="edu-card__program">Специалист по интеграции прикладных решений</h3>
+            <span class="edu-card__period">2020 — 2024</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ КОНТАКТЫ ░░ -->
+    <section class="section" id="contacts">
+      <div class="container contacts">
+        <h2 class="section__title fade-up">Контакты</h2>
+        <p class="contacts__subtitle fade-up">Открыт к новым предложениям и интересным проектам</p>
+        <div class="contacts__cards fade-up">
+
+          <a href="mailto:zaxarrexar45@gmail.com" class="contact-card">
+            <svg class="contact-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span class="contact-card__label">Email</span>
+            <span class="contact-card__value">zaxarrexar45@gmail.com</span>
+          </a>
+
+          <a href="https://t.me/zazarrexar" target="_blank" rel="noopener" class="contact-card">
+            <svg class="contact-card__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span class="contact-card__label">Telegram</span>
+            <span class="contact-card__value">@zazarrexar</span>
+          </a>
+
+          <a href="tel:+79234124127" class="contact-card">
+            <svg class="contact-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.89 11.9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.63a16 16 0 006.29 6.29l1.45-1.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span class="contact-card__label">Телефон</span>
+            <span class="contact-card__value">+7 923 412 41 27</span>
+          </a>
+
+        </div>
+        <div class="contacts__cta fade-up">
+          <button onclick="window.print()" class="btn btn--primary btn--lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Скачать PDF-резюме
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Захар Медяник</span>
+      <span class="footer__sep">·</span>
+      <span>Томск, Россия</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
